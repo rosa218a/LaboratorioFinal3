@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-demo-svc
+  name: spring-demo
+  labels:
+    app: spring-demo
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: spring-demo
   ports:
-    - port: 80
+    - port: 8080
       targetPort: 8080
-      nodePort: 30081
